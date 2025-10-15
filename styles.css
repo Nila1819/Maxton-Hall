@@ -1,48 +1,67 @@
+body {
+    font-family: "Georgia", "Times New Roman", serif; /* Elegant font for text */
+    margin: 0;
+    background-color: #001f3f; /* Deep blue background */
+    color: white; /* Default text color */
+    text-align: center; /* Centers all text */
+}
+
+/* Header and Title */
+header {
+    background-color: transparent;
+    color: #ff69b4; /* Hot pink title */
+    padding: 40px 10px;
+    font-family: "Bubblegum Sans", cursive; /* Bubble-style font */
+    font-size: 3em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Makes the bubble letters pop */
+}
+
+/* Subheadings */
+h2, h3, h4 {
+    color: #87ceeb; /* Sky blue */
+    font-family: "Bubblegum Sans", cursive; /* Same bubble font as the title */
+    margin-top: 30px;
+}
+
+/* Main Content */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Sections */
+section {
+    background-color: transparent;
+    padding: 20px;
+}
+
+/* Navigation (optional if used) */
 nav {
     display: flex;
-    justify-content: center; /* This centers the items along the main axis */
-    background-color: #521609;
+    justify-content: center;
+    background-color: transparent;
     padding: 10px;
 }
 
 nav a {
-    color: green;
-    text-decoration: none; /* Removes the underline */
-    padding: 10px 20px; /* Adds space around the links */
-}
-body {
-    font-family: sans-serif;
-    margin: 0;
-    background-color: #f4f4f4;
+    color: #ff69b4;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-family: "Bubblegum Sans", cursive;
 }
 
-header {
-    background-color: #521609;
-    color: black;
-    padding: 10px;
-    text-align: center;
-}
-h2 {
-    background-color: #691F0E;
-    color: white;
-    padding: 10px;
-    text-align: center;
-}
-main {
-    max-width: 800px;
-    margin: 20px auto; /* Centers the main content block */
-    padding: 20px;
-}
-
-section {
-    background-color: green;
-    margin-bottom: 20px; /* Adds space between sections */
-    padding: 20px;
-}
 /* Media Query for mobile devices */
 @media (max-width: 768px) {
     nav {
-        flex-direction: column; /* Stacks the flex items vertically */
-        align-items: center;    /* Centers the items on the cross-axis */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header {
+        font-size: 2.5em;
     }
 }
+
+/* Import the bubble font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
