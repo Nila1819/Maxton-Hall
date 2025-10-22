@@ -143,3 +143,16 @@ nav a {
         font-size: 2.5em;
     }
 }
+.gallery {
+    text-align: center; /* Centers the section */
+    margin-top: 30px;
+}
+
+.gallery img {
+    width: 50%;          /* Makes the image smaller (half the page width) */
+    max-width: 400px;    /* Keeps it from getting too large */
+    height: auto;        /* Keeps the proportions */
+    border-radius: 10px; /* Soft rounded corners */
+    margin: 15px 0;      /* Space between images */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Soft shadow for elegance */
+}
