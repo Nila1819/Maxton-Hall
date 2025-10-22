@@ -1,158 +1,137 @@
-/* Import Bubblegum font */
-@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
-
-/* General Page Style */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maxton Hall - Portfolio</title>
+<style>
+/* --- GENERAL PAGE STYLE --- */
 body {
-    font-family: "Georgia", "Times New Roman", serif;
+    font-family: 'Segoe UI', sans-serif;
     margin: 0;
-    background-color: #001f3f; /* Deep navy blue */
-    color: white;
+    padding: 0;
+    background: linear-gradient(180deg, #ffe6f2, #fff);
+    color: #333;
     text-align: center;
 }
 
-/* Header and Main Title */
+/* --- HEADER --- */
 header {
-    background-color: transparent;
-    color: #ff69b4; /* Hot pink title */
-    padding: 40px 10px;
-    font-family: "Bubblegum Sans", cursive;
-    font-size: 3em;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    background-color: #d63384;
+    color: white;
+    padding: 30px 0;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* Subtitles */
-h2, h3, h4 {
-    color: #ffa6d6;
-    font-family: "Bubblegum Sans", cursive;
-    margin-top: 30px;
-    position: relative;
-    font-size: 2em;
-    display: inline-block;
-    animation: fadeIn 1s ease;
-}
-
-/* Sparkles */
-h2::before, h2::after,
-h3::before, h3::after,
-h4::before, h4::after {
-    content: "✨";
-    color: #ffd6f9;
-    margin: 0 10px;
-    display: inline-block;
-    animation: sparkle 2s infinite ease-in-out;
-}
-
-@keyframes sparkle {
-    0%, 100% {
-        opacity: 0.8;
-        transform: scale(1);
-        text-shadow: 0 0 6px #fff, 0 0 10px #ffb6e0, 0 0 20px #ffd6f9;
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.2);
-        text-shadow: 0 0 10px #fff, 0 0 15px #ffb6e0, 0 0 25px #ffd6f9;
-    }
-}
-
-/* Section Box */
-section {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 30px;
-    margin: 40px auto;
-    max-width: 900px;
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
-    animation: fadeIn 1.5s ease;
-}
-
-/* --- 🆕 TEXT + IMAGE LAYOUT --- */
-.text-image {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: left;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.text-box {
-    flex: 1 1 50%;
-    min-width: 280px;
-}
-
-.image-box {
-    flex: 1 1 40%;
-    display: flex;
-    justify-content: center;
-}
-
-.image-box img {
-    width: 100%;
-    max-width: 380px;
+/* --- SECTIONS --- */
+main section {
+    background: white;
+    margin: 30px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 700px;
     border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #d63384;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+/* --- IMAGES --- */
+.image.featured img {
+    width: 90%;
+    max-width: 600px;
+    border-radius: 15px;
+    margin-top: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.image-box img:hover {
+.image.featured img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5);
+}
+
+/* --- GALLERY SECTION --- */
+.gallery {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.gallery h2 {
+    margin-bottom: 20px;
+}
+
+.gallery img {
+    width: 45%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 15px;
+    margin: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
 }
 
-/* Paragraph text */
-section p {
-    font-size: 1.1em;
-    line-height: 1.6;
+/* --- FOOTER --- */
+footer {
+    background-color: #d63384;
+    color: white;
+    padding: 15px 0;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
 }
+</style>
+</head>
 
-/* Navigation (optional) */
-nav {
-    display: flex;
-    justify-content: center;
-    background-color: transparent;
-    padding: 10px;
-}
+<body>
+<header>
+    <h1>Maxton Hall</h1>
+</header>
 
-nav a {
-    color: #ff69b4;
-    text-decoration: none;
-    padding: 10px 20px;
-    font-family: "Bubblegum Sans", cursive;
-}
+<main>
+    <section>
+        <h2>Reason to Watch</h2>
+        <p>The reason is because it's incredible and has well-selected music.</p>
+        <span class="image featured">
+            <img src="Maxton hall.jpg" alt="A scene from Maxton Hall showing two characters in elegant vintage outfits smiling at each other.">
+        </span>
+    </section>
 
-/* Fade animation */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+    <section>
+        <h2>Would I Recommend It?</h2>
+        <p>Yes, it's interesting and as mentioned, it is all exactly coordinated to create the best mood for each scene.</p>
+        <span class="image featured">
+            <img src="Maxton hall2.jpg" alt="Another scene from Maxton Hall showing two characters sitting together in an elegant room.">
+        </span>
+    </section>
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .text-image {
-        flex-direction: column;
-        text-align: center;
-    }
+    <section>
+        <h2>The New Season</h2>
+        <p>The good news is that in November a new season will come.</p>
+    </section>
 
-    .image-box img {
-        width: 80%;
-        max-width: 300px;
-    }
+    <!-- ✨ New Gallery Section ✨ -->
+    <section class="gallery">
+        <h2>✨ Favorite Moments ✨</h2>
+        <img src="maxtonhall_moment1.jpg" alt="Beautiful shot from Maxton Hall moment 1">
+        <img src="maxtonhall_moment2.jpg" alt="Emotional scene from Maxton Hall moment 2">
+    </section>
+</main>
 
-    header {
-        font-size: 2.5em;
-    }
-}
-.gallery {
-    text-align: center; /* Centers the section */
-    margin-top: 30px;
-}
-
-.gallery img {
-    width: 50%;          /* Makes the image smaller (half the page width) */
-    max-width: 400px;    /* Keeps it from getting too large */
-    height: auto;        /* Keeps the proportions */
-    border-radius: 10px; /* Soft rounded corners */
-    margin: 15px 0;      /* Space between images */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Soft shadow for elegance */
-}
+<footer>
+    <p>© 2025 Camila Rodriguez. All rights reserved.</p>
+</footer>
+</body>
+</html>
