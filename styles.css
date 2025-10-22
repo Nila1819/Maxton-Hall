@@ -20,9 +20,9 @@ header {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Subtitles (H2, H3, etc.) */
+/* Subtitles */
 h2, h3, h4 {
-    color: #ffa6d6; /* Lighter pink than the title */
+    color: #ffa6d6;
     font-family: "Bubblegum Sans", cursive;
     margin-top: 30px;
     position: relative;
@@ -31,7 +31,7 @@ h2, h3, h4 {
     animation: fadeIn 1s ease;
 }
 
-/* Add sparkles before and after subtitles */
+/* Sparkles */
 h2::before, h2::after,
 h3::before, h3::after,
 h4::before, h4::after {
@@ -42,7 +42,6 @@ h4::before, h4::after {
     animation: sparkle 2s infinite ease-in-out;
 }
 
-/* Sparkle animation (gentle twinkle) */
 @keyframes sparkle {
     0%, 100% {
         opacity: 0.8;
@@ -58,8 +57,8 @@ h4::before, h4::after {
 
 /* Section Box */
 section {
-    background-color: rgba(255, 255, 255, 0.1); /* Soft translucent light color */
-    border-radius: 20px; /* Smooth rounded edges */
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
     padding: 30px;
     margin: 40px auto;
     max-width: 900px;
@@ -67,31 +66,44 @@ section {
     animation: fadeIn 1.5s ease;
 }
 
-/* Content inside each section */
-section p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    margin-bottom: 20px;
+/* --- 🆕 TEXT + IMAGE LAYOUT --- */
+.text-image {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
-/* Image container for two side-by-side pictures */
-.image-row {
+.text-box {
+    flex: 1 1 50%;
+    min-width: 280px;
+}
+
+.image-box {
+    flex: 1 1 40%;
     display: flex;
     justify-content: center;
-    gap: 20px; /* space between the two images */
-    flex-wrap: wrap; /* stacks on smaller screens */
 }
 
-.image-row img {
-    width: 45%;
+.image-box img {
+    width: 100%;
+    max-width: 380px;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.image-row img:hover {
+.image-box img:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Paragraph text */
+section p {
+    font-size: 1.1em;
+    line-height: 1.6;
 }
 
 /* Navigation (optional) */
@@ -109,24 +121,25 @@ nav a {
     font-family: "Bubblegum Sans", cursive;
 }
 
-/* Smooth fade-in for sections */
+/* Fade animation */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive Design for smaller screens */
+/* Responsive Design */
 @media (max-width: 768px) {
-    nav {
+    .text-image {
         flex-direction: column;
-        align-items: center;
+        text-align: center;
+    }
+
+    .image-box img {
+        width: 80%;
+        max-width: 300px;
     }
 
     header {
         font-size: 2.5em;
-    }
-
-    .image-row img {
-        width: 80%;
     }
 }
