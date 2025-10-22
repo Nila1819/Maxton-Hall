@@ -1,42 +1,100 @@
+/* Import Bubblegum font */
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+
+/* General Page Style */
 body {
-    font-family: "Georgia", "Times New Roman", serif; /* Elegant font for text */
+    font-family: "Georgia", "Times New Roman", serif;
     margin: 0;
-    background-color: #001f3f; /* Deep blue background */
-    color: white; /* Default text color */
-    text-align: center; /* Centers all text */
+    background-color: #001f3f; /* Deep navy blue */
+    color: white;
+    text-align: center;
 }
 
-/* Header and Title */
+/* Header and Main Title */
 header {
     background-color: transparent;
     color: #ff69b4; /* Hot pink title */
     padding: 40px 10px;
-    font-family: "Bubblegum Sans", cursive; /* Bubble-style font */
+    font-family: "Bubblegum Sans", cursive;
     font-size: 3em;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Makes the bubble letters pop */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Subheadings */
+/* Subtitles (H2, H3, etc.) */
 h2, h3, h4 {
-    color: #87ceeb; /* Sky blue */
-    font-family: "Bubblegum Sans", cursive; /* Same bubble font as the title */
+    color: #ffa6d6; /* Lighter pink than the title */
+    font-family: "Bubblegum Sans", cursive;
     margin-top: 30px;
+    position: relative;
+    font-size: 2em;
+    display: inline-block;
+    animation: fadeIn 1s ease;
 }
 
-/* Main Content */
-main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
+/* Add sparkles before and after subtitles */
+h2::before, h2::after,
+h3::before, h3::after,
+h4::before, h4::after {
+    content: "✨";
+    color: #ffd6f9;
+    margin: 0 10px;
+    display: inline-block;
+    animation: sparkle 2s infinite ease-in-out;
 }
 
-/* Sections */
+/* Sparkle animation (gentle twinkle) */
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0.8;
+        transform: scale(1);
+        text-shadow: 0 0 6px #fff, 0 0 10px #ffb6e0, 0 0 20px #ffd6f9;
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+        text-shadow: 0 0 10px #fff, 0 0 15px #ffb6e0, 0 0 25px #ffd6f9;
+    }
+}
+
+/* Section Box */
 section {
-    background-color: transparent;
-    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* Soft translucent light color */
+    border-radius: 20px; /* Smooth rounded edges */
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 900px;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+    animation: fadeIn 1.5s ease;
 }
 
-/* Navigation (optional if used) */
+/* Content inside each section */
+section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Image container for two side-by-side pictures */
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* space between the two images */
+    flex-wrap: wrap; /* stacks on smaller screens */
+}
+
+.image-row img {
+    width: 45%;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-row img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Navigation (optional) */
 nav {
     display: flex;
     justify-content: center;
@@ -51,7 +109,13 @@ nav a {
     font-family: "Bubblegum Sans", cursive;
 }
 
-/* Media Query for mobile devices */
+/* Smooth fade-in for sections */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design for smaller screens */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -61,7 +125,8 @@ nav a {
     header {
         font-size: 2.5em;
     }
-}
 
-/* Import the bubble font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+    .image-row img {
+        width: 80%;
+    }
+}
